@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<form th:action="@{/admin/changepass}" method="post">
+  <h4>Change Password</h4>
+        
+           
+        Username:    <input type="text" name="username" th:value=*{loo.username} readonly><br><br>
+          
+            
+       Old Password: <input type="text" name="password" th:value=*{loo.password} readonly><br><br>
+       
+       New password:<input type="password" name="newpass"><br><br>
+          
+            <input type="submit" value="Change">
+        
+  </form>
+  
+  </div>
+  
+  <div th:if="${lool != null}" align="center">
+
+<h4 th:text="${loo}"></h4>
+</div>
+
+
+</body>
+</html>

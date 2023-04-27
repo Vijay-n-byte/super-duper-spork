@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.sa{
+position:relative;
+top:150px;
+left:400px;
+
+}
+.da{
+position:relative;
+left:800px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div align="left" class="sa">
+<form th:action="@{/admin/login}" th:object="${log}" method="post">
+  <h4>Admin login</h4>
+        
+           
+        Username:    <input type="text" name="username"><br><br>
+          
+            
+        Password: <input type="password" name="password"><br><br>
+          
+            <input type="submit" value="Login">
+        
+  </form>
+  
+  </div>
+  <!--  
+  <form th:action="@{/userhome}" th:object="${lool}" method="post">
+  <h4>Customers login</h4>
+        
+           
+            <input type="text" name="username">
+          
+            
+            <input type="password" name="password">
+          
+            <input type="submit" value="Login">
+        
+  </form>
+
+-->
+<div align="left" class="da">
+ <form th:action="@{/products/logged}"  method="post">
+  <h4>Customers login</h4>
+        
+           
+      Username:      <input type="text" name="username"><br><br>
+          
+            
+     Password:       <input type="password" name="password"><br><br>
+          
+            <input type="submit" value="Login">
+        
+  </form>
+</div>
+<div th:if="${loo != null}" align="center">
+
+<h4 th:text="${loo}"></h4>
+</div>
+
+
+
+</body>
+</html>

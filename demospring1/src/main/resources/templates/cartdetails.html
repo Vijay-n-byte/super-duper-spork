@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>cart</title>
+<style>
+.da{
+position:relative;
+top:50px;
+
+}
+
+</style>
+</head>
+<body>
+<header>
+<div align="left">
+<form th:action ="@{/userhomeagain}" method="post" class="up">     
+      <input type ="submit" name="subupd" value="Back to homepage">
+ </form>
+ </div>
+<h3 align="center">your current purchase</h3> </header>
+
+<section>
+<div align="center" class="da">
+<table border=3 class="table"  th:if="${car != null}">
+<tr>
+<td>product name</td>
+<td>description</td>
+<td>cost</td>
+<td>quantity</td>
+</tr>
+<tr th:each="c:${car}">
+<td th:text="${c[0]}"/> </td>
+<td th:text="${c[1]}"/> </td>
+<td th:text="${c[2]}"/> </td>
+<td th:text="${c[3]}"/> </td>
+</tr>
+
+<h4 align="center">Total:<th:block th:text=${total}></h4>
+
+<form th:action ="@{/home/transaction}" method="post" class="up">
+      <input type ="submit" name="subupd" value="proceed to pay">
+ </form>
+<br>
+<br>
+
+</table>
+</div>
+
+</section>
+
+
+</body>
+</html>

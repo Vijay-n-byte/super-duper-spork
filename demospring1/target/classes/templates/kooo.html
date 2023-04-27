@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+.po{
+position:relative;
+top:10px;
+left:1200px;
+}
+.pp{
+position:relative;
+top:40px;
+left:1350px;
+}
+</style>
+</head>
+<body>
+
+<ul class="nav nav-pills navbar-expand-lg bg-body-tertiary ">
+ <li class="nav-item">
+    <a class="nav-link" href="/adminhome/customers">customers</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/purchasedetails">purchase</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/chengepassword">password</a>
+  </li>
+  <div class="po">
+  <li class="nav-item">
+    <a class="nav-link" href="/adminlogin">Logout</a>
+  </li>
+
+ </div>
+
+</ul>
+
+<nav class="pp">
+<a href="/adminhome/addproducts">Add </a>
+</nav>
+
+<div>
+<br>
+<br>
+<br>
+<table border=3 class="table">
+<tr>
+
+<td><b>product number</b></td>
+<td><b>product name</b></td>
+<td><b>description</b></td>
+<td><b>cost</b></td>
+<td><b>category</b></td>
+<td><b>size</b></td>
+<td><b>image</b></td>
+<td><b>Edit</b></td>
+<td><b>size</b></td>
+</tr>
+
+<tr th:each="prod : ${loop}">
+<td th:text="${prod.productno}"/> </td>
+<td th:text="${prod.productname}"/> </td>
+<td th:text="${prod.description}"/> </td>
+<td th:text="${prod.cost}"/> </td>
+<td th:text="${prod.category}"/> </td>
+<td th:text="${prod.s}"/> </td>
+
+<td>
+<img th:src="${prod.img}" alt="im" width="100" height="100"/></td>
+
+
+<td>
+<form th:action ="@{/deleteproducts/{id}(id=${prod.productno})}" method="post">
+      <input type ="submit" name="subupd" value="delete">
+ </form>
+ 
+ <form th:action ="@{/updateproducts/{id}(id=${prod.productno})}" method="post">
+      <input type ="submit" name="subupd" value="Update">
+ </form>
+ 
+ </td>
+ <td>
+ 
+ <form th:action ="@{/setproductsize/{id}(id=${prod.productno})}" method="post">
+    <input type="number" name="size" >
+      <input type ="submit" name="subupd" value="set">
+ </form>
+ 
+ </td>
+ 
+</tr>
+
+
+</table>
+
+
+</div>
+<td th:if="${jj != null}">
+<img th:src="${jj}" alt="im" width="150" height="150"/></td>
+</body>
+</html>
+
+
+
+

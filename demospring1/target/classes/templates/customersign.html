@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.lo{
+position:relative;
+top:200px;
+left:550px;
+}
+
+</style>
+</head>
+<body>
+<div class="lo">
+<form th:action ="@{/products/loginpage}" th:object="${cust}" method="post" class ="ad">
+
+<h3>Signup</h3>
+        name : <input type="text" name="name" required><br><br>
+      address: <input type="text" name="address" required><br><br>
+  phonenumber: <input type="text" name="phonenumber" required><br><br>
+      Adhaar: <input type="text" name="adhaarno" required><br><br>
+      Username: <input type="text" name="username" required><br><br>
+      password: <input type="text" name="password" required><br><br>
+      
+      <input type ="submit" name="subadd" value="Signup">
+ </form>
+
+</div>
+
+
+
+</body>
+</html>
+

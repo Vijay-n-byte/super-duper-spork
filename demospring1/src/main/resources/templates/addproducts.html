@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action ="@{/adminhome/addproducts/added}" th:object="${loo}" enctype="multipart/form-data" method="post" class ="ad">
+
+<h3>Add</h3>
+      product name : <input type="text" th:field="*{productname}" name="productname" required><br/>
+      description: <input type="text" th:field="*{description}" name="description" required><br/>
+      cost: <input type="number" th:field="*{cost}" name="cost" required><br/>
+      Category: <br>
+      male: <input type="radio" th:field="*{category}" name="category" value="male"><br/>
+      female:<input type="radio" th:field="*{category}" name="category" value="female"><br/>
+      Image :<input type="file" accept="image/jpeg, image/png" name="image" required><br/>     
+      <input type ="submit" name="subadd" value="Add">
+ </form>
+ <br>
+ <br>
+ <br>
+
+
+<table  border=1 th:if="${products1 != null}" class="table table-success table-striped">
+<h4>Edited details</</h4>
+<tr>
+<td>product number</td>
+<td>product name</td>
+<td>description</td>
+<td>cost</td>
+<td>category</td>
+<td>size</td>
+<td>image</td>
+</tr>
+<tr>
+<td th:text="${products1.productno}"/> </td>
+<td th:block th:text="${products1.productname}"/> </td>
+<td th:block th:text="${products1.description}"/> </td>
+<td th:block th:text="${products1.cost}"/> </td>
+<td th:block th:text="${products1.category}"/> </td>
+<td th:block th:text="${products1.s}"/> </td>
+<td th:block th:text="${products1.img}"/> </td>
+
+</tr>
+</table>
+<footer>
+<nav>
+<a href="/adminhome">Back to home</a>
+</nav>
+
+</footer>
+
+
+</body>
+</html>

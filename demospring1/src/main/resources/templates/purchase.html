@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+<div align="center">
+ <form th:action ="@{/home/sort}" method="post" class="up">
+ <h4>Sort</h4>
+       Category: 
+       <select name="category">
+       <option value="male">Mens</option>
+       <option value="female">womens</option>
+       </select>
+       <br>
+      Date:    <input type="date" name="datetosort"><br><br>
+      <input type ="submit" name="subupd" value="Apply">
+      
+ </form>
+ </div>
+ 
+<table  border=2 align="center">
+<h4></h4>
+<tr>
+<td>purchase id</td>
+<td>date</td>
+<td>customer id</td>
+<td>product no</td>
+<td>one product cost</td>
+<td>Quantity</td>
+
+</tr>
+<tr th:each="p : ${loo}">
+<td th:text="${p[0]}"/> </td>
+<td th:block th:text="${p[1]}"/> </td>
+<td th:block th:text="${p[2]}"/> </td>
+<td th:block th:text="${p[3]}"/> </td>
+<td th:block th:text="${p[4]}"/> </td>
+<td th:block th:text="${p[5]}"/> </td>
+
+</tr>
+</table>
+
+
+</body>
+</html>

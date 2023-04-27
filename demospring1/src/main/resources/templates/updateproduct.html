@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action ="@{/adminhome/updateproducts/updated}"  enctype="multipart/form-data" method="post" class ="ad">
+
+<h3>Update</h3>
+      product number : <input type="number"  th:value="${pp.productno}"  name="productno" readonly><br/>
+      product name : <input type="text"  th:value="${pp.productname}"  name="productname" required><br/>
+      description: <input type="text"  th:value="${pp.description}"  name="description" required><br/>
+      cost: <input type="number"  th:value="${pp.cost}" name="cost" required><br/>
+      Category: <br>
+      male: <input type="radio"  name="category" value="male"><br/>
+      female:<input type="radio" name="category" value="female"><br/>
+      Image :<input type="file" accept="image/jpeg, image/png" name="image" required><br/>     
+      <input type ="submit" name="subadd" value="Add">
+ </form>
+ <br>
+ <br>
+ <br>
+ <footer>
+<nav>
+<a href="/adminhome">Back to home</a>
+</nav>
+
+</footer>
+ 
+ <br>
+</body>
+</html>

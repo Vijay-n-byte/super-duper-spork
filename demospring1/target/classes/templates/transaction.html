@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.ha{
+position:relative;
+top:70px;
+
+}
+
+</style>
+</head>
+<body>
+<div id="recome" align="center" class="ha">
+      <h2>payment</h2>
+     <form autocomplete="off" th:action="@{/home/transaction/done}" method="post">
+       <div>
+       <label>cardholdername :</label>
+       <input type="text" name="cn" class="adhaarsouce" placeholder="card name" required>
+       </div>
+       <br>
+       <div>
+       <label>card no :</label>
+       <input type="text" name="cn1" class="agesouce" placeholder="xxxx xxxx" required>
+       </div>
+       <br>
+       <div>
+       <label>expiry date :</label>
+       <input type="text" name="ci" class="citysouce" placeholder="dd-mm-yyyy" required>
+       </div>
+       <br>
+       <div>
+       <label>CCV :</label>
+       <input type="number" name="na" class="namesouce" placeholder="enter ccv" required>
+       </div>
+       <br>
+       
+       <button class="button">pay</button>
+       
+     </form>
+     </div >
+</body>
+</html>
